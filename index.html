@@ -2,14 +2,471 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aman R. Jain | Professional Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman R. Jain | Accounting Business Consultant & Legal Services</title>
+    <!-- Google Fonts & FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 100px; background-color: #f4f4f9; color: #333; }
-        h1 { color: #0056b3; }
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-main: #334155;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .hero h2 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #60a5fa;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-features li i {
+            color: #10b981;
+            font-size: 0.8rem;
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: #eff6ff;
+            border-top: 1px solid #dbeafe;
+            border-bottom: 1px solid #dbeafe;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .info-banner h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-banner p {
+            color: #475569;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Payment QR Section */
+        .payment-section {
+            max-width: 700px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .payment-box {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .payment-box h2 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-box p {
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .qr-container {
+            max-width: 280px;
+            margin: 0 auto 1.5rem auto;
+            padding: 1rem;
+            border: 2px dashed #cbd5e1;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .qr-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .upi-id {
+            font-weight: 600;
+            color: var(--primary);
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            max-width: 900px;
+            margin: 0 auto 5rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+        }
+
+        .contact-box h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p span {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.1rem; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to amanrkjain.in</h1>
-    <p>Website is currently under construction. Check back soon!</p>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">amanrkjain<span>.in</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#payment">Pay Online</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Aman R. Jain</h1>
+            <h2>Accounting Business Consultant & Legal Services</h2>
+            <p>Expert financial accounting, precision legal document preparation, online MP e-stamping, and secure PAN India Digital Signature solutions.</p>
+            <a href="#payment" class="btn">Pay via QR Code</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Core Professional Services</h2>
+            <p>Comprehensive solutions tailored for businesses and individuals nationwide.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-calculator"></i></div>
+                <h3>Accounting Business Consulting</h3>
+                <p>Professional financial accounting, bookkeeping, compliance reporting, and systematic business process optimization.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Bookkeeping & Ledger Management</li>
+                    <li><i class="fa-solid fa-check"></i> Financial & Tax Reconciliations</li>
+                    <li><i class="fa-solid fa-check"></i> Strategic Business Advisory</li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <h3>Legal Documents & MP e-Stamp</h3>
+                <p>Accurate drafting of legal agreements, corporate documentation, and authorized online e-stamping services for Madhya Pradesh.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Business Agreements & Contracts</li>
+                    <li><i class="fa-solid fa-check"></i> MP Online e-Stamp Generation</li>
+                    <li><i class="fa-solid fa-check"></i> Precision Legal Drafting</li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-signature"></i></div>
+                <h3>Digital Signature Services</h3>
+                <p>Fast processing and secure issuance of Class 3 Digital Signature Certificates (DSC) available PAN India.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Class 3 DSC Issuance & Renewal</li>
+                    <li><i class="fa-solid fa-check"></i> Secure Hardware Token Support</li>
+                    <li><i class="fa-solid fa-check"></i> PAN India Delivery & Verification</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Banner -->
+    <section class="info-banner" id="about">
+        <div class="hero-container">
+            <h3><i class="fa-solid fa-globe"></i> PAN India Reach & MP Expertise</h3>
+            <p>Delivering prompt digital signature and consulting services across India, paired with specialized physical/digital execution support for Madhya Pradesh e-stamping.</p>
+        </div>
+    </section>
+
+    <!-- Payment QR Section -->
+    <section class="payment-section" id="payment">
+        <div class="payment-box">
+            <h2>Quick Online Payment</h2>
+            <p>Scan the QR code using any UPI app (GPay, PhonePe, Paytm, BHIM) to pay securely.</p>
+            
+            <div class="qr-container">
+                <!-- Replace 'qr.png' with the exact filename of your uploaded image if different -->
+                <img src="qr.png" alt="Payment UPI QR Code">
+            </div>
+
+            <div class="upi-id">
+                <i class="fa-solid fa-qrcode"></i> UPI ID: s2736438058@slc
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-box">
+            <h2>Connect With Us</h2>
+            <p>Get professional assistance for your accounting, compliance, and legal documentation requirements.</p>
+            
+            <div class="contact-info">
+                <a href="tel:8269911201" class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 82699 11201</span>
+                </a>
+                <a href="mailto:amanrkjain@gmail.com" class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>amanrkjain@gmail.com</span>
+                </a>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Jabalpur, Madhya Pradesh</span>
+                </div>
+            </div>
+
+            <a href="mailto:amanrkjain@gmail.com" class="btn">Send an Inquiry</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <span>amanrkjain.in</span>. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
