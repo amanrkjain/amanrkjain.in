@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accounting Business Consultants</title>
+    <title>ABC | Accounting Business Consultants</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -11,41 +11,89 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { color: var(--text-main); background-color: var(--bg-light); line-height: 1.6; }
         
-        header { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); text-decoration: none; }
-        .logo span { color: var(--accent); }
+        header { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: 700; font-size: 1.35rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .logo-badge { background: var(--accent); color: var(--white); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 1rem; }
+        .logo span { color: var(--accent); font-weight: 400; font-size: 0.95rem; }
+        
         .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; }
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
-        .hero { max-width: 800px; margin: 5rem auto; padding: 0 2rem; text-align: center; }
-        .hero h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
-        .hero p { color: #64748b; margin-bottom: 2rem; font-size: 1.1rem; }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%); color: var(--white); padding: 6rem 2rem; text-align: center; }
+        .hero-container { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 2.75rem; font-weight: 700; margin-bottom: 1rem; }
+        .hero p { color: #94a3b8; font-size: 1.15rem; margin-bottom: 2rem; }
         
-        .btn { display: inline-block; background: var(--accent); color: var(--white); padding: 0.75rem 1.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
-        
-        footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 1.5rem; margin-top: 5rem; font-size: 0.9rem; }
+        .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-block; background: var(--accent); color: var(--white); padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+        .btn:hover { background: #1d4ed8; }
+        .btn-outline { background: transparent; border: 2px solid var(--white); }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+        .highlights { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; text-align: center; }
+        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+        .card h3 { color: var(--primary); margin-bottom: 0.75rem; }
+        .card p { color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+        footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 2rem; margin-top: 4rem; font-size: 0.9rem; }
         footer span { color: #fff; font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .logo span { display: none; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">Accounting Business <span>Consultants</span></a>
+        <a href="index.html" class="logo">
+            <span class="logo-badge">ABC</span> <span>Accounting Business Consultants</span>
+        </a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="services.html">Products & Services</a></li>
             <li><a href="payment.html">Pay Online</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </header>
 
-    <div class="hero">
-        <h1>Welcome to Accounting Business Consultants</h1>
-        <p>Your trusted partner for professional financial accounting, legal documentation, and digital signature solutions.</p>
-        <a href="payment.html" class="btn">Proceed to Payment QR</a>
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Expert Financial, Tax & Software Solutions</h1>
+            <p>Empowering businesses with TallyPrime, GST & Income Tax consultation, Business Incorporation, and professional MP-based legal drafting.</p>
+            <div class="btn-group">
+                <a href="services.html" class="btn">Explore Services</a>
+                <a href="payment.html" class="btn btn-outline">Pay via QR</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="highlights">
+        <div class="card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Tally Software & Education</h3>
+            <p>Authorized TallyPrime software sales, professional setup, and certified Tally Education programs.</p>
+            <a href="services.html" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Details</a>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <h3>Taxation & Compliance</h3>
+            <p>Expert GST & Income Tax consultation, PAN/TAN application, and business incorporation support.</p>
+            <a href="services.html" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Details</a>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <h3>Legal & MP e-Stamping</h3>
+            <p>Precision legal documentation, agreement drafting (MP-based), and PAN India Digital Signatures (DSC).</p>
+            <a href="services.html" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Details</a>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 <span>Accounting Business Consultants</span>. All rights reserved.</p>
+        <p>&copy; 2026 <span>Accounting Business Consultants (ABC)</span>. All rights reserved.</p>
     </footer>
 
 </body>
