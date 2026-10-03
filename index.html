@@ -3,150 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accounting Business Consultants | Secure Payment</title>
-    <!-- Google Fonts & FontAwesome for Icons -->
+    <title>Accounting Business Consultants</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --text-main: #334155;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-            --border: #e2e8f0;
-        }
+        :root { --primary: #0f172a; --accent: #2563eb; --text-main: #334155; --bg-light: #f8fafc; --white: #ffffff; --border: #e2e8f0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { color: var(--text-main); background-color: var(--bg-light); line-height: 1.6; }
+        
+        header { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; }
+        .nav-links a:hover { color: var(--accent); }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            color: var(--text-main);
-            background-color: var(--bg-light);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* Header / Navbar */
-        header {
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 1.25rem 2rem;
-            text-align: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.35rem;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        /* Main Section */
-        .main-container {
-            max-width: 500px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-            width: 100%;
-        }
-
-        .payment-box {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .payment-box h1 {
-            color: var(--primary);
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .payment-box p {
-            color: #64748b;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .qr-container {
-            max-width: 260px;
-            margin: 0 auto 1.5rem auto;
-            padding: 1rem;
-            border: 2px dashed #cbd5e1;
-            border-radius: 10px;
-            background: #fff;
-        }
-
-        .qr-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 6px;
-        }
-
-        .upi-id {
-            font-weight: 600;
-            color: var(--primary);
-            background: #f1f5f9;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            display: inline-block;
-            font-size: 0.95rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: #94a3b8;
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        footer p span {
-            color: #ffffff;
-            font-weight: 600;
-        }
+        .hero { max-width: 800px; margin: 5rem auto; padding: 0 2rem; text-align: center; }
+        .hero h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+        .hero p { color: #64748b; margin-bottom: 2rem; font-size: 1.1rem; }
+        
+        .btn { display: inline-block; background: var(--accent); color: var(--white); padding: 0.75rem 1.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        
+        footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 1.5rem; margin-top: 5rem; font-size: 0.9rem; }
+        footer span { color: #fff; font-weight: 600; }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <a href="#" class="logo">Accounting Business <span>Consultants</span></a>
+        <a href="index.html" class="logo">Accounting Business <span>Consultants</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="payment.html">Pay Online</a></li>
+        </ul>
     </header>
 
-    <!-- Main Payment Section -->
-    <div class="main-container">
-        <div class="payment-box">
-            <h1>Quick Payment</h1>
-            <p>Scan the QR code using any UPI app (GPay, PhonePe, Paytm, BHIM)</p>
-            
-            <div class="qr-container">
-                <!-- Ensure your uploaded image file matches this filename -->
-                <img src="qr.png" alt="Payment UPI QR Code">
-            </div>
-
-            <div class="upi-id">
-                <i class="fa-solid fa-qrcode"></i> UPI ID: s2736438058@slc
-            </div>
-        </div>
+    <div class="hero">
+        <h1>Welcome to Accounting Business Consultants</h1>
+        <p>Your trusted partner for professional financial accounting, legal documentation, and digital signature solutions.</p>
+        <a href="payment.html" class="btn">Proceed to Payment QR</a>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 <span>Accounting Business Consultants</span>. All rights reserved.</p>
     </footer>
