@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accounting Business Consultants | Home</title>
+    <title>ABC | Accounting Business Consultants</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #0f172a; --accent: #2563eb; --text-main: #334155; --bg-light: #f8fafc; --white: #ffffff; --border: #e2e8f0; }
+        :root { --primary: #0f172a; --accent: #2563eb; --whatsapp: #25D366; --text-main: #334155; --bg-light: #f8fafc; --white: #ffffff; --border: #e2e8f0; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { color: var(--text-main); background-color: var(--bg-light); line-height: 1.6; }
         
         header { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); text-decoration: none; }
-        .logo span { color: var(--accent); }
-        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .logo { font-weight: 700; font-size: 1.35rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .logo-badge { background: var(--accent); color: var(--white); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 1rem; }
+        .logo span { color: var(--accent); font-weight: 400; font-size: 0.95rem; }
+        
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
@@ -24,10 +26,12 @@
         .hero p { color: #94a3b8; font-size: 1.15rem; margin-bottom: 2rem; }
         
         .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-        .btn { display: inline-block; background: var(--accent); color: var(--white); padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+        .btn { display: inline-block; background: var(--accent); color: var(--white); padding: 0.8rem 1.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
         .btn:hover { background: #1d4ed8; }
         .btn-outline { background: transparent; border: 2px solid var(--white); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); }
+        .btn-whatsapp { background: var(--whatsapp); display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-whatsapp:hover { background: #22bf5b; }
 
         .highlights { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
         .card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; text-align: center; }
@@ -35,14 +39,25 @@
         .card h3 { color: var(--primary); margin-bottom: 0.75rem; }
         .card p { color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; }
 
+        /* Floating WhatsApp Button */
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; transition: transform 0.2s; }
+        .whatsapp-float:hover { transform: scale(1.1); color: white; }
+
         footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 2rem; margin-top: 4rem; font-size: 0.9rem; }
         footer span { color: #fff; font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .logo span { display: none; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">Accounting Business <span>Consultants</span></a>
+        <a href="index.html" class="logo">
+            <span class="logo-badge">ABC</span> <span>Accounting Business Consultants</span>
+        </a>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -58,7 +73,8 @@
             <p>Empowering businesses with TallyPrime, GST & Income Tax consultation, Business Incorporation, and professional MP-based legal drafting.</p>
             <div class="btn-group">
                 <a href="services.html" class="btn">Explore Services</a>
-                <a href="payment.html" class="btn btn-outline">Pay via QR</a>
+                <a href="https://wa.me/918269911201?text=Hello,%20I%20would%20like%20to%20request%20a%20service%20from%20ABC." target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Service Request</a>
+                <a href="tel:8269911201" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Request</a>
             </div>
         </div>
     </section>
@@ -84,8 +100,13 @@
         </div>
     </div>
 
+    <!-- Floating WhatsApp Chat Bubble -->
+    <a href="https://wa.me/918269911201?text=Hi,%20I%20want%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <footer>
-        <p>&copy; 2026 <span>Accounting Business Consultants</span>. All rights reserved.</p>
+        <p>&copy; 2026 <span>Accounting Business Consultants (ABC)</span>. All rights reserved.</p>
     </footer>
 
 </body>
