@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Accounting Business Consultants</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #0f172a; --accent: #2563eb; --text-main: #334155; --bg-light: #f8fafc; --white: #ffffff; --border: #e2e8f0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { color: var(--text-main); background-color: var(--bg-light); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; justify-content: space-between; }
+        
+        header { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: 700; font-size: 1.35rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .logo-badge { background: var(--accent); color: var(--white); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 1rem; }
+        .logo span { color: var(--accent); font-weight: 400; font-size: 0.95rem; }
+        
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+        .container { max-width: 900px; margin: 4rem auto; padding: 0 2rem; width: 100%; }
+        .about-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+        .about-card h1 { color: var(--primary); font-size: 2.25rem; margin-bottom: 1.5rem; text-align: center; }
+        .about-card p { color: #475569; font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.8; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+        .feature-item { background: var(--bg-light); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); text-align: center; }
+        .feature-item i { font-size: 1.75rem; color: var(--accent); margin-bottom: 0.75rem; }
+        .feature-item h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .feature-item p { font-size: 0.9rem; color: #64748b; margin-bottom: 0; }
+
+        footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 1.5rem; font-size: 0.9rem; }
+        footer span { color: #fff; font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .logo span { display: none; }
+            .nav-links { display: none; }
+            .about-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <span class="logo-badge">ABC</span> <span>Accounting Business Consultants</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="services.html">Products & Services</a></li>
+            <li><a href="payment.html">Pay Online</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="about-card">
+            <h1>About ABC</h1>
+            <p>Welcome to <strong>Accounting Business Consultants (ABC)</strong>, based in Jabalpur, Madhya Pradesh. We are dedicated to providing premier financial, taxation, legal documentation, and software solutions to businesses and professionals nationwide.</p>
+            <p>With deep expertise in Indian tax frameworks, GST and Income Tax consultations, business incorporation, and authorized TallyPrime software implementation, our mission is to simplify complex financial workflows and ensure complete compliance for our clients.</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h4>Our Mission</h4>
+                    <p>To deliver accurate, prompt, and reliable business and financial advisory services.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h4>Trusted Expertise</h4>
+                    <p>Comprehensive knowledge across GST, taxation, company registration, and legal drafting.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <h4>PAN India Reach</h4>
+                    <p>Providing seamless digital signature certificates and remote business support across India.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <span>Accounting Business Consultants (ABC)</span>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
