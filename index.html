@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC | Accounting Business Consultants</title>
+    <title>Accounting Business Consultants | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -12,10 +12,8 @@
         body { color: var(--text-main); background-color: var(--bg-light); line-height: 1.6; }
         
         header { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-weight: 700; font-size: 1.35rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-        .logo-badge { background: var(--accent); color: var(--white); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 1rem; }
-        .logo span { color: var(--accent); font-weight: 400; font-size: 0.95rem; }
-        
+        .logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
         .nav-links { display: flex; gap: 1.5rem; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: var(--accent); }
@@ -39,19 +37,12 @@
 
         footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 2rem; margin-top: 4rem; font-size: 0.9rem; }
         footer span { color: #fff; font-weight: 600; }
-
-        @media (max-width: 768px) {
-            .logo span { display: none; }
-            .nav-links { display: none; }
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">
-            <span class="logo-badge">ABC</span> <span>Accounting Business Consultants</span>
-        </a>
+        <a href="index.html" class="logo">Accounting Business <span>Consultants</span></a>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="services.html">Products & Services</a></li>
@@ -93,7 +84,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 <span>Accounting Business Consultants (ABC)</span>. All rights reserved.</p>
+        <p>&copy; 2026 <span>Accounting Business Consultants</span>. All rights reserved.</p>
     </footer>
 
 </body>
