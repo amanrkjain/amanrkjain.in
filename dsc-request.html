@@ -45,7 +45,10 @@
         .qr-preview { max-width: 180px; margin: 1.0rem auto; display: block; border-radius: 6px; border: 1px solid var(--border); }
         .upi-id { background: var(--white); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; display: inline-block; border: 1px solid var(--border); font-size: 0.9rem; color: var(--primary); }
 
-        .form-frame-container { width: 100%; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff; min-height: 750px; }
+        .form-frame-container { width: 100%; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff; min-height: 750px; position: relative; }
+        
+        .fallback-link { display: block; text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+        .fallback-link:hover { text-decoration: underline; }
 
         .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; transition: transform 0.2s; }
         .whatsapp-float:hover { transform: scale(1.1); color: white; }
@@ -97,10 +100,15 @@
                 <h3 style="color: var(--primary); margin-bottom: 0.75rem; font-size: 1.1rem; text-align: left;">Step 2: Submit Details & Upload Documents</h3>
             </div>
             
-            <!-- Embedded Google Form Container -->
+            <!-- Embedded Google Form Container with proper embedded view format -->
             <div class="form-frame-container">
-                <iframe src="https://forms.gle/CLB5kCPCmPgZhUUn9" width="100%" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading form...</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd.../viewform?embedded=true" width="100%" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading form...</iframe>
             </div>
+
+            <!-- Fallback link in case browser blocks cookies inside iframe -->
+            <a href="https://forms.gle/CLB5kCPCmPgZhUUn9" target="_blank" class="fallback-link">
+                <i class="fa-solid fa-external-link-alt"></i> Having trouble viewing the form above? Click here to open it in a new tab.
+            </a>
         </div>
     </div>
 
