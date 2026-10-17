@@ -3,88 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Accounting Business Consultants</title>
+    <title>Accounting Business Consultants | Professional Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #0f172a; --accent: #2563eb; --text-main: #334155; --bg-light: #f8fafc; --white: #ffffff; --border: #e2e8f0; }
+        /* Unique Midnight & Violet / Indigo Trust Palette */
+        :root { 
+            --bg-main: #f8fafc; 
+            --primary-dark: #0f172a; 
+            --accent-indigo: #4f46e5; 
+            --accent-hover: #4338ca;
+            --accent-violet-light: #e0e7ff;
+            --text-main: #334155; 
+            --white: #ffffff; 
+            --border: #e2e8f0; 
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { color: var(--text-main); background-color: var(--bg-light); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; justify-content: space-between; }
         
-        header { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-weight: 700; font-size: 1.35rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-        .logo-badge { background: var(--accent); color: var(--white); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 1rem; }
-        .logo span { color: var(--accent); font-weight: 400; font-size: 0.95rem; }
+        body { color: var(--text-main); background-color: var(--bg-main); line-height: 1.6; }
         
-        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        /* Top Navigation Header */
+        header { background: var(--white); border-bottom: 1px solid var(--border); padding: 0.85rem 2.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+        .logo { font-weight: 700; font-size: 1.25rem; color: var(--primary-dark); text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
+        .logo-img { height: 38px; width: auto; object-fit: contain; }
+        .logo span { color: var(--accent-indigo); font-weight: 500; font-size: 0.88rem; }
+        
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.92rem; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-indigo); }
 
-        .container { max-width: 900px; margin: 4rem auto; padding: 0 2rem; width: 100%; }
-        .about-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
-        .about-card h1 { color: var(--primary); font-size: 2.25rem; margin-bottom: 1.5rem; text-align: center; }
-        .about-card p { color: #475569; font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.8; }
+        .header-actions { display: flex; align-items: center; gap: 1rem; }
+        .header-actions a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--primary-dark); }
+        .btn-download { background: var(--accent-indigo); color: var(--white); padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; transition: background 0.2s; }
+        .btn-download:hover { background: var(--accent-hover); }
 
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
-        .feature-item { background: var(--bg-light); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); text-align: center; }
-        .feature-item i { font-size: 1.75rem; color: var(--accent); margin-bottom: 0.75rem; }
-        .feature-item h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem; }
-        .feature-item p { font-size: 0.9rem; color: #64748b; margin-bottom: 0; }
+        /* Hero Section with Unique Gradient Accent */
+        .hero-section { max-width: 1200px; margin: 3.5rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 3rem; }
+        .hero-content h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-indigo); font-weight: 700; margin-bottom: 0.75rem; }
+        .hero-content h1 { font-size: 3.2rem; color: var(--primary-dark); font-weight: 800; line-height: 1.15; margin-bottom: 1rem; }
+        .highlight-badge { background: var(--accent-violet-light); color: var(--accent-indigo); padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.88rem; font-weight: 600; display: inline-block; margin-bottom: 1.2rem; }
+        .hero-content p { font-size: 1.1rem; color: #475569; margin-bottom: 1.8rem; }
+        
+        .btn-primary-action { background: var(--accent-indigo); color: var(--white); padding: 0.8rem 1.75rem; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25); transition: background 0.2s; }
+        .btn-primary-action:hover { background: var(--accent-hover); }
 
-        footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 1.5rem; font-size: 0.9rem; }
+        .hero-graphics-box { background: linear-gradient(135deg, #4f46e5, #3b82f6); padding: 3.5rem 2rem; border-radius: 16px; text-align: center; color: var(--white); box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15); }
+
+        /* Section: Run your business like a pro */
+        .features-section { max-width: 1200px; margin: 5rem auto; padding: 0 1.5rem; text-align: center; }
+        .features-section h2 { font-size: 2.25rem; color: var(--primary-dark); margin-bottom: 3rem; font-weight: 700; }
+        
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; text-align: left; }
+        .accordion-list { display: flex; flex-direction: column; gap: 1rem; }
+        .accordion-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; cursor: pointer; transition: all 0.2s; }
+        .accordion-item.active { border-color: var(--accent-indigo); box-shadow: 0 4px 15px rgba(79, 70, 229, 0.06); }
+        .accordion-header { display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.05rem; color: var(--primary-dark); }
+        .accordion-body { font-size: 0.92rem; color: #64748b; margin-top: 0.75rem; display: none; }
+        .accordion-item.active .accordion-body { display: block; }
+        
+        .features-graphic-box { background: var(--white); padding: 3.5rem 2rem; border-radius: 16px; text-align: center; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.02); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+        /* Callout Banners Section */
+        .callout-section { max-width: 1200px; margin: 4.5rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .callout-card-left { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+        .callout-card-left h3 { font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 0.75rem; font-weight: 700; }
+        .callout-card-left p { color: #64748b; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        
+        .callout-card-right { background: linear-gradient(135deg, #1e1b4b, #312e81); color: var(--white); border-radius: 12px; padding: 2.5rem; box-shadow: 0 10px 25px rgba(30, 27, 75, 0.15); }
+        .callout-card-right h3 { font-size: 1.5rem; margin-bottom: 0.75rem; font-weight: 700; }
+        .callout-card-right p { opacity: 0.85; margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+        .btn-outline { background: var(--accent-violet-light); color: var(--accent-indigo); padding: 0.65rem 1.35rem; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: background 0.2s; }
+        .btn-outline:hover { background: #c7d2fe; }
+        
+        .btn-white { background: var(--white); color: var(--primary-dark); padding: 0.65rem 1.35rem; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: background 0.2s; }
+        .btn-white:hover { background: #f1f5f9; }
+
+        /* Trusted by millions globally */
+        .trusted-section { background: #eff6ff; padding: 5rem 1.5rem; text-align: center; border-top: 1px solid #dbeafe; border-bottom: 1px solid #dbeafe; }
+        .trusted-section h2 { font-size: 2.25rem; color: var(--primary-dark); margin-bottom: 3rem; font-weight: 700; }
+        .trusted-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .trusted-card { background: var(--white); padding: 2.5rem 2rem; border-radius: 12px; border: 1px solid var(--border); text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .trusted-card h3 { font-size: 2.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.5rem; }
+        .badge-pill { background: var(--accent-violet-light); color: var(--accent-indigo); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.78rem; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+        .trusted-card p { font-size: 0.9rem; color: #64748b; }
+
+        /* Footer */
+        footer { background: var(--primary-dark); color: #94a3b8; text-align: center; padding: 2rem; font-size: 0.9rem; }
         footer span { color: #fff; font-weight: 600; }
 
-        @media (max-width: 768px) {
-            .logo span { display: none; }
-            .nav-links { display: none; }
-            .about-card { padding: 1.5rem; }
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero-section, .features-grid, .callout-section, .trusted-grid { grid-template-columns: 1fr; }
+            .nav-links, .header-actions { display: none; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
         <a href="index.html" class="logo">
-            <span class="logo-badge">ABC</span> <span>Accounting Business Consultants</span>
+            <img src="image_1b88ff.png" alt="ABC Logo" class="logo-img">
+            <span>Accounting Business Consultants</span>
         </a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Products & Services</a></li>
-            <li><a href="payment.html">Pay Online</a></li>
+            <li><a href="dsc-request.html">DSC Request</a></li>
+            <li><a href="demos.html">Free Demos</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="header-actions">
+            <a href="contact.html">Log In</a>
+            <a href="dsc-request.html" class="btn-download"><i class="fa-solid fa-arrow-down"></i> Download</a>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="about-card">
-            <h1>About ABC</h1>
-            <p>Welcome to <strong>Accounting Business Consultants (ABC)</strong>, based in Jabalpur, Madhya Pradesh. We are dedicated to providing premier financial, taxation, legal documentation, and software solutions to businesses and professionals nationwide.</p>
-            <p>With deep expertise in Indian tax frameworks, GST and Income Tax consultations, business incorporation, and authorized TallyPrime software implementation, our mission is to simplify complex financial workflows and ensure complete compliance for our clients.</p>
-            
-            <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <h4>Our Mission</h4>
-                    <p>To deliver accurate, prompt, and reliable business and financial advisory services.</p>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h3>A NEW ERA OF</h3>
+            <h1>Thoughtful Intelligence</h1>
+            <div class="highlight-badge">Save up to 80%</div>
+            <p>of the time spent on manual data entry with ABC and modernize your business operations seamlessly.</p>
+            <a href="dsc-request.html" class="btn-primary-action">Get Fully Access <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-graphics-box">
+            <i class="fa-solid fa-laptop-code" style="font-size: 4rem; color: #ffffff; margin-bottom: 1rem;"></i>
+            <h4 style="color: #ffffff; font-size: 1.35rem; font-weight: 700;">ABC Business Portal</h4>
+            <p style="font-size: 0.9rem; color: #e0e7ff; margin-top: 0.5rem;">Secure Client Management & Tax Automation</p>
+        </div>
+    </section>
+
+    <!-- Run your business like a pro -->
+    <section class="features-section">
+        <h2>Run your business like a pro</h2>
+        <div class="features-grid">
+            <div class="accordion-list">
+                <div class="accordion-item active" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <span>Simple to learn, effortless to master</span>
+                        <i class="fa-solid fa-minus"></i>
+                    </div>
+                    <div class="accordion-body">
+                        Get started in minutes, with no prior training required. Adapts to your way of working, making invoicing, accounting, and business management simple and intuitive.
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-handshake"></i>
-                    <h4>Trusted Expertise</h4>
-                    <p>Comprehensive knowledge across GST, taxation, company registration, and legal drafting.</p>
+
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <span>Insights that drive decisions</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="accordion-body">
+                        Access powerful real-time business reports and analytics to help you make informed financial and strategic decisions instantly.
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-globe"></i>
-                    <h4>PAN India Reach</h4>
-                    <p>Providing seamless digital signature certificates and remote business support across India.</p>
+
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <span>Access anytime, securely everywhere</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="accordion-body">
+                        Manage your accounts, review compliance documents, and coordinate with clients securely from any device, anywhere in the world.
+                    </div>
                 </div>
             </div>
+
+            <div class="features-graphic-box">
+                <i class="fa-solid fa-shield-halved" style="font-size: 4rem; color: var(--accent-indigo); margin-bottom: 1rem;"></i>
+                <h4 style="color: var(--primary-dark); font-size: 1.25rem; font-weight: 700;">Secure & Reliable</h4>
+                <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">Anti-copy & 100% Data Protection Guarantee</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 <span>Accounting Business Consultants (ABC)</span>. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+    <!-- Callout Banners -->
+    <section class="callout-
